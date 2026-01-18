@@ -1,28 +1,120 @@
+:root{
+--bg:#0b0b0f;
+--card:#14141c;
+--gold:#d4af37;
+--muted:#b5b5b5;
+}
+
 body{
 margin:0;
 font-family:Poppins;
-background:#0b0b0f;
+background:var(--bg);
 color:#fff;
+}
+
+#cover{
+position:fixed;
+inset:0;
+background:#0b0b0f;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:1000;
+}
+
+.cover-box{
+border:1px solid #2a2a2a;
+padding:40px 30px;
+border-radius:24px;
 text-align:center;
+max-width:320px;
+}
+
+.cover-box button{
+margin-top:20px;
+padding:14px;
+width:100%;
+border:none;
+border-radius:16px;
+background:var(--gold);
+font-weight:500;
+}
+
+.hero{
+position:relative;
+height:100vh;
+overflow:hidden;
 }
 
 .hero img{
 width:100%;
-height:100vh;
+height:100%;
 object-fit:cover;
-opacity:.6;
+filter:grayscale(.3);
+}
+
+.hero .overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,.3),#0b0b0f);
+}
+
+.hero-text{
+position:absolute;
+bottom:15%;
+width:100%;
+text-align:center;
+}
+
+.hero-text h1{
+font-family:"Playfair Display";
+font-size:40px;
+}
+
+.section{
+padding:80px 20px;
 }
 
 .card{
-background:#14141c;
-margin:30px 15px;
-padding:30px;
-border-radius:20px;
+background:var(--card);
+border-radius:28px;
+padding:40px;
 }
 
-.couple img{
-width:120px;
-height:120px;
+.couple{
+display:flex;
+justify-content:space-between;
+align-items:center;
+text-align:center;
+}
+
+.person img{
+width:130px;
+height:130px;
 border-radius:50%;
 object-fit:cover;
+border:3px solid var(--gold);
+}
+
+.and{
+font-size:30px;
+color:var(--gold);
+}
+
+.detail a{
+display:block;
+margin-top:20px;
+padding:16px;
+background:var(--gold);
+text-align:center;
+border-radius:16px;
+color:#111;
+font-weight:500;
+}
+
+iframe{
+width:100%;
+height:250px;
+border:none;
+border-radius:20px;
 }
