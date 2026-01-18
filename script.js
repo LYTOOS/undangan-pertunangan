@@ -1,5 +1,5 @@
-const params=new URLSearchParams(location.search);
-const guest=params.get("tamu")||"Tamu Undangan";
+const p=new URLSearchParams(location.search);
+const guest=p.get("tamu")||"Tamu Undangan";
 document.getElementById("guestName").innerText=guest;
 
 function openInvite(){
