@@ -5,17 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Charly & Fitriani</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- OPENING -->
+<!-- COVER -->
 <section id="cover">
 <div class="cover-box">
-<p>Kepada Yth.</p>
+<p class="small">UNDANGAN TUNANGAN</p>
 <h1 id="guestName">Tamu Undangan</h1>
+<p class="muted">Dengan segala hormat, kami mengundang Anda</p>
 <button onclick="openInvite()">Buka Undangan</button>
 </div>
 </section>
@@ -24,43 +25,66 @@
 
 <!-- HERO -->
 <section class="hero">
-<img src="foto/hero.jpg">
-<h1>Charly & Fitriani</h1>
-<p>15 Februari 2026</p>
-</section>
-
-<!-- BASMALAH -->
-<section class="card">
-<p class="arab">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+<div class="overlay"></div>
+<img src="foto/hero.jpg" alt="">
+<div class="hero-text">
+<small>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</small>
+<h1>Charly<br>& Fitriani</h1>
+<span>15 Februari 2026</span>
+</div>
 </section>
 
 <!-- COUPLE -->
-<section class="card couple">
-<div>
+<section class="section">
+<div class="card couple">
+<div class="person">
 <img src="foto/charly.jpg">
-<h2>Charly Handani, S.I.Kom</h2>
+<h2>Charly Handani</h2>
+<p>S.I.Kom</p>
 </div>
-<span>&</span>
-<div>
+<span class="and">&</span>
+<div class="person">
 <img src="foto/fitriani.jpg">
-<h2>Fitriani, S.Pd</h2>
+<h2>Fitriani</h2>
+<p>S.Pd</p>
+</div>
+</div>
+</section>
+
+<!-- INFO -->
+<section class="section">
+<div class="card text-center">
+<p>
+Dengan memohon rahmat dan ridho Allah SWT,
+kami bermaksud menyelenggarakan acara tunangan
+dan mengharap kehadiran serta doa restu.
+</p>
 </div>
 </section>
 
 <!-- DETAIL -->
-<section class="card">
-<p><b>Ahad, 15 Februari 2026</b></p>
-<p>Kediaman Mempelai Wanita</p>
-<a href="#" id="rsvpBtn">Konfirmasi Kehadiran</a>
+<section class="section">
+<div class="card detail">
+<div>
+<span>Hari / Tanggal</span>
+<b>Ahad, 15 Februari 2026</b>
+</div>
+<div>
+<span>Tempat</span>
+<b>Kediaman Mempelai Wanita</b>
+</div>
+<a id="rsvpBtn">Konfirmasi Kehadiran</a>
+</div>
 </section>
 
 <!-- MAP -->
-<section class="card">
+<section class="section">
+<div class="card map">
 <iframe src="https://www.google.com/maps?q=-0.3329,103.1450&output=embed"></iframe>
+</div>
 </section>
 
 <script src="firebase.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
-
