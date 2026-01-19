@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fitriani & Charly</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
@@ -27,105 +26,101 @@
 
 <!-- HERO -->
 <section class="hero">
-
   <img src="foto/hero.jpg" alt="">
   <div class="overlay"></div>
 
-  <div class="hero-text"
-       data-aos="fade-up"
-       data-aos-delay="300">
-
+  <div class="hero-text" data-aos="fade-up">
     <small>Undangan Tunangan</small>
 
     <h1>
-      Fitriani<br>&<br>Charly Handani
+      Fitriani<br>
+      <span style="font-family:'Great Vibes';font-size:80px;color:#d4af37">&</span><br>
+      Charly Handani
     </h1>
 
-<!-- ARABIC TEXT DI SINI -->
     <p class="arabic">
       بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
     </p>
 
-    <!-- DIVIDER -->
     <div class="divider"></div>
-
     <p>15 Februari 2026</p>
-
   </div>
-
 </section>
 
 <!-- COUPLE -->
 <section class="section">
-  <div class="card couple">
-  <div class="person"
-     data-aos="fade-up"
-     data-aos-delay="200">
-  <img src="foto/fitriani.jpg">
-    <h2>Fitriani</h2>
-  <p>S.Pd</p>
-  </div>
-  <span class="and">&</span>
-  <div class="person"
-     data-aos="fade-up"
-     data-aos-delay="200">
-    <img src="foto/charly.jpg">
-    <h2>Charly Handani</h2>
-  <p>S.I.Kom</p>
-  </div>
+  <div class="card">
+
+    <div class="couple-photo">
+
+      <div class="person" data-aos="fade-up">
+        <img src="foto/fitriani.jpg">
+        <p>Fitriani<br><small>S.Pd</small></p>
+      </div>
+
+      <div class="ring-divider">
+        <img src="foto/ring.png">
+      </div>
+
+      <div class="person" data-aos="fade-up">
+        <img src="foto/charly.jpg">
+        <p>Charly Handani<br><small>S.I.Kom</small></p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
+<!-- GALLERY -->
 <section class="section gallery">
-
   <p class="muted">GALERI</p>
   <h2>Kenangan Kami</h2>
   <div class="divider"></div>
 
   <div class="gallery-wrap">
 
-    <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal1.jpg" alt="" loading="lazy">
+    <div class="gallery-item" data-aos="zoom-out-up">
+      <img src="foto/gal1.jpg" loading="lazy">
     </div>
 
-    <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal2.jpg" alt="" loading="lazy">
+    <div class="gallery-item" data-aos="zoom-out-up">
+      <img src="foto/gal2.jpg" loading="lazy">
     </div>
 
-    <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal3.jpg" alt="" loading="lazy">
+    <div class="gallery-item" data-aos="zoom-out-up">
+      <img src="foto/gal3.jpg" loading="lazy">
     </div>
 
-    <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal4.jpg" alt="" loading="lazy">
+    <div class="gallery-item" data-aos="zoom-out-up">
+      <img src="foto/gal4.jpg" loading="lazy">
     </div>
 
   </div>
 </section>
 
 <!-- INFO -->
-<section class="section"
-         data-aos="fade-up">
+<section class="section" data-aos="fade-up">
   <div class="card text-center">
-  <p>
-  Dengan memohon rahmat dan ridho Allah SWT,
-  kami bermaksud menyelenggarakan acara tunangan
-  dan mengharap kehadiran serta doa restu.
-  </p>
+    <p>
+      Dengan memohon rahmat dan ridho Allah SWT,
+      kami bermaksud menyelenggarakan acara tunangan
+      dan mengharap kehadiran serta doa restu.
+    </p>
   </div>
 </section>
 
 <!-- DETAIL -->
 <section class="section">
   <div class="card detail">
-  <div>
-  <span>Hari / Tanggal</span>
-    <b>Minggu, 15 Februari 2026</b>
-  </div>
-  <div>
-  <span>Tempat</span>
-  <b>Kediaman Mempelai Wanita</b>
-  </div>
+    <div>
+      <span>Hari / Tanggal</span>
+      <b>Minggu, 15 Februari 2026</b>
+    </div>
+    <div>
+      <span>Tempat</span>
+      <b>Kediaman Mempelai Wanita</b>
+    </div>
     <a id="rsvpBtn">Konfirmasi Kehadiran</a>
   </div>
 </section>
@@ -137,39 +132,15 @@
   </div>
 </section>
 
-<script>
-const galleryImgs=document.querySelectorAll('.gallery-item img');
-
-window.addEventListener('scroll',()=>{
-  galleryImgs.forEach(img=>{
-    const rect=img.getBoundingClientRect();
-    if(rect.top<window.innerHeight && rect.bottom>0){
-      img.style.transform=
-      `translateY(${rect.top*0.05}px)`;
-    }
-  });
-});
-</script>
-
-<script>
-const heroImg=document.querySelector('.hero img');
-window.addEventListener('scroll',()=>{
-  let s=window.scrollY;
-  heroImg.style.transform=`translateY(${s*0.15}px)`;
-});
-</script>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="firebase.js"></script>
-<script src="script.js"></script>
 
 <script>
 AOS.init({
-  duration:1200,
-  easing:'ease-out-cubic',
   once:true,
-  offset:80
+  offset:120,
+  easing:'ease-out-cubic'
 });
 </script>
+
 </body>
 </html>
