@@ -29,6 +29,7 @@
 <section class="hero">
 
   <img src="foto/hero.jpg" alt="">
+  <div class="overlay"></div>
 
   <div class="hero-text"
        data-aos="fade-up"
@@ -137,15 +138,6 @@
 </section>
 
 <script>
-AOS.init({
-  duration:1200,
-  easing:'ease-out-cubic',
-  once:true,
-  offset:80
-});
-</script>
-
-<script>
 const galleryImgs=document.querySelectorAll('.gallery-item img');
 
 window.addEventListener('scroll',()=>{
@@ -167,8 +159,17 @@ window.addEventListener('scroll',()=>{
 });
 </script>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="firebase.js"></script>
 <script src="script.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration:1200,
+  easing:'ease-out-cubic',
+  once:true,
+  offset:80
+});
+</script>
 </body>
 </html>
