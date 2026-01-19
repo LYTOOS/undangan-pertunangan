@@ -181,6 +181,7 @@ font-family:Amiri,serif;
 font-size:22px;
 line-height:2.4;
 letter-spacing:.5px;
+margin:28px 0 20px;
 text-align:center;
 color:var(--gold);
 }
@@ -189,7 +190,7 @@ color:var(--gold);
 .divider{
 width:90px;
 height:1px;
-margin:40px auto;
+margin:34px auto;
 background:linear-gradient(
 to right,
 transparent,
