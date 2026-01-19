@@ -172,5 +172,14 @@ img.style.opacity=1;
 });
 </script>
 
+<script>
+const heroImg=document.querySelector('.hero img');
+
+window.addEventListener('scroll',()=>{
+const s=window.scrollY;
+heroImg.style.transform=`translateY(${s*0.12}px) scale(1.08)`;
+});
+</script>
+
 </body>
 </html>
