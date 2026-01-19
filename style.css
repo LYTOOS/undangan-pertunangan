@@ -416,8 +416,7 @@ box-shadow:var(--shadow-soft);
 
 /* PREMIUM RING CENTER */
 .ring-wrap{
-    margin:12px 0;
-  }
+  margin:12px 0;
 }
 
 .ring-wrap img{
@@ -476,4 +475,19 @@ box-shadow:var(--shadow-soft);
   width: 180px;
   opacity: .9;
   filter: drop-shadow(0 0 12px rgba(212,175,55,.45));
+}
+
+@media(max-width:600px){
+  .couple-photo{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .hero-text h1{
+    font-size:42px;
+  }
+
+  .section{
+    padding:90px 18px;
+  }
 }
