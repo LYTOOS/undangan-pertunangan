@@ -155,20 +155,6 @@ AOS.init({
 </script>
 
 <script>
-function openInvite(){
-  document.getElementById("cover").style.display = "none";
-
-  const music = document.getElementById("music");
-  if(music){
-    music.volume = 0.7;
-    music.play().catch(()=>{});
-  }
-
-  document.body.style.overflow = "auto";
-}
-</script>
-
-<script>
 const galleryItems=document.querySelectorAll('.gallery-item img');
 
 window.addEventListener('scroll',()=>{
@@ -189,6 +175,33 @@ window.addEventListener('scroll',()=>{
 const s=window.scrollY;
 heroImg.style.transform=`translateY(${s*0.12}px) scale(1.08)`;
 });
+</script>
+
+<script>
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("music-btn");
+
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    musicBtn.classList.remove("paused");
+  }else{
+    music.pause();
+    musicBtn.classList.add("paused");
+  }
+}
+
+function openInvite(){
+  document.getElementById("cover").style.display="none";
+  document.body.style.overflow="auto";
+
+  if(music){
+    music.volume = 0.7;
+    music.play().catch(()=>{});
+  }
+
+  musicBtn.classList.add("active");
+}
 </script>
 
 <!-- MUSIC BUTTON -->
