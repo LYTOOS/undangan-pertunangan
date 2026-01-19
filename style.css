@@ -16,22 +16,36 @@ background:var(--bg);
 color:#fff;
 }
 
-#cover{
-position:fixed;
-inset:0;
-background:#0b0b0f;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:1000;
+#cover {
+  position: fixed;
+  inset: 0;
+  background: #0c0c0c;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cover-box{
-border:1px solid #2a2a2a;
-padding:40px 30px;
-border-radius:24px;
-text-align:center;
-max-width:320px;
+.cover-box {
+  text-align: center;
+  animation: coverZoom 1.8s ease forwards;
+}
+
+@keyframes coverZoom {
+  from { opacity: 0; transform: scale(1.15); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#cover.hide {
+  animation: coverOut 1.4s ease forwards;
+}
+
+@keyframes coverOut {
+  to {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+  }
 }
 
 .cover-box button{
