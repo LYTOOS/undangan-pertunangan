@@ -187,7 +187,12 @@ gap:80px;
   width: 100%;
   height: 260px;
   object-fit: cover;
+  opacity: 0;
   transition: transform 1s ease, opacity .6s ease;
+}
+
+.gallery-item[data-aos].aos-animate img {
+  opacity: 1;
 }
 
 .gallery-item:hover img{
