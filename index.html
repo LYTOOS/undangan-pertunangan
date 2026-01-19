@@ -84,19 +84,19 @@
   <div class="gallery-wrap">
 
     <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal1.jpg" alt="">
+      <img src="foto/gal1.jpg" alt="" loading="lazy">
     </div>
 
     <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal2.jpg" alt="">
+      <img src="foto/gal2.jpg" alt="" loading="lazy">
     </div>
 
     <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal3.jpg" alt="">
+      <img src="foto/gal3.jpg" alt="" loading="lazy">
     </div>
 
     <div class="gallery-item" data-aos="fade-up">
-      <img src="foto/gal4.jpg" alt="">
+      <img src="foto/gal4.jpg" alt="" loading="lazy">
     </div>
 
   </div>
@@ -142,6 +142,20 @@ AOS.init({
   easing:'ease-out-cubic',
   once:true,
   offset:80
+});
+</script>
+
+<script>
+const galleryImgs=document.querySelectorAll('.gallery-item img');
+
+window.addEventListener('scroll',()=>{
+  galleryImgs.forEach(img=>{
+    const rect=img.getBoundingClientRect();
+    if(rect.top<window.innerHeight && rect.bottom>0){
+      img.style.transform=
+      `translateY(${rect.top*0.05}px)`;
+    }
+  });
 });
 </script>
 
