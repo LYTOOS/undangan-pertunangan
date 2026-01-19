@@ -8,18 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- COVER -->
 <section id="cover">
-<div class="cover-box">
-<p class="muted">UNDANGAN TUNANGAN</p>
-<h1 id="guestName">Tamu Undangan</h1>
-<p class="muted">Dengan segala hormat, kami mengundang Anda</p>
-<button onclick="openInvite()">Buka Undangan</button>
-</div>
+  <div class="cover-box">
+    <p class="muted">UNDANGAN TUNANGAN</p>
+    <h1 id="guestName">Tamu Undangan</h1>
+    <p class="muted">Dengan segala hormat, kami mengundang Anda</p>
+    <button onclick="openInvite()">Buka Undangan</button>
+  </div>
 </section>
 
 <audio id="music" src="audio/backsound.mp3" loop></audio>
@@ -29,7 +30,9 @@
 
   <img src="foto/hero.jpg" alt="">
 
-  <div class="hero-text">
+  <div class="hero-text"
+       data-aos="fade-up"
+       data-aos-delay="300">
 
     <small>Undangan Tunangan</small>
 
@@ -53,55 +56,78 @@
 
 <!-- COUPLE -->
 <section class="section">
-<div class="card couple">
-<div class="person">
-<img src="foto/fitriani.jpg">
-<h2>Fitriani</h2>
-<p>S.Pd</p>
-</div>
-<span class="and">&</span>
-<div class="person">
-<img src="foto/charly.jpg">
-<h2>Charly Handani</h2>
-<p>S.I.Kom</p>
-</div>
-</div>
+  <div class="card couple">
+  <div class="person"
+     data-aos="fade-up"
+     data-aos-delay="200">
+  <img src="foto/fitriani.jpg">
+    <h2>Fitriani</h2>
+  <p>S.Pd</p>
+  </div>
+  <span class="and">&</span>
+  <div class="person"
+     data-aos="fade-up"
+     data-aos-delay="200">
+  <img src="foto/charly.jpg">
+    <h2>Charly Handani</h2>
+  <p>S.I.Kom</p>
+  </div>
+  </div>
 </section>
 
 <!-- INFO -->
-<section class="section">
-<div class="card text-center">
-<p>
-Dengan memohon rahmat dan ridho Allah SWT,
-kami bermaksud menyelenggarakan acara tunangan
-dan mengharap kehadiran serta doa restu.
-</p>
-</div>
+<section class="section"
+         data-aos="fade-up">
+  <div class="card text-center">
+  <p>
+  Dengan memohon rahmat dan ridho Allah SWT,
+  kami bermaksud menyelenggarakan acara tunangan
+  dan mengharap kehadiran serta doa restu.
+  </p>
+  </div>
 </section>
 
 <!-- DETAIL -->
 <section class="section">
-<div class="card detail">
-<div>
-<span>Hari / Tanggal</span>
-<b>Minggu, 15 Februari 2026</b>
-</div>
-<div>
-<span>Tempat</span>
-<b>Kediaman Mempelai Wanita</b>
-</div>
-<a id="rsvpBtn">Konfirmasi Kehadiran</a>
-</div>
+  <div class="card detail">
+  <div>
+  <span>Hari / Tanggal</span>
+    <b>Minggu, 15 Februari 2026</b>
+  </div>
+  <div>
+  <span>Tempat</span>
+  <b>Kediaman Mempelai Wanita</b>
+  </div>
+    <a id="rsvpBtn">Konfirmasi Kehadiran</a>
+  </div>
 </section>
 
 <!-- MAP -->
 <section class="section">
-<div class="card map">
-<iframe src="https://www.google.com/maps?q=-0.239052,103.635860&output=embed"></iframe>
-</div>
+  <div class="card map">
+    <iframe src="https://www.google.com/maps?q=-0.239052,103.635860&output=embed"></iframe>
+  </div>
 </section>
+
+<script>
+AOS.init({
+  duration:1200,
+  easing:'ease-out-cubic',
+  once:true,
+  offset:80
+});
+</script>
+
+<script>
+const heroImg=document.querySelector('.hero img');
+window.addEventListener('scroll',()=>{
+  let s=window.scrollY;
+  heroImg.style.transform=`translateY(${s*0.15}px)`;
+});
+</script>
 
 <script src="firebase.js"></script>
 <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>
