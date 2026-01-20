@@ -37,7 +37,6 @@ function openInvite(){
   const invite = document.querySelector(".invite");
 
   cover.classList.add("hide");
-
   setTimeout(()=>{
     cover.style.display="none";
     invite.classList.add("show");
@@ -46,15 +45,25 @@ function openInvite(){
   },1200);
 
   document.body.classList.remove("locked");
+  document.getElementById('cover').style.display = 'none';
+
+  document.querySelector('.invite').classList.add('show');
 
   if(music){
     music.volume=0.7;
     music.play().catch(()=>{});
   }
 
+  const music = document.getElementById('music');
+  music.play();
+
   if(musicBtn){
     musicBtn.classList.add("active");
   }
+  
+  const btn = document.getElementById('music-btn');
+  btn.style.opacity = '1';
+  btn.style.pointerEvents = 'auto';
 }
 
 // =============================
