@@ -535,6 +535,8 @@ box-shadow:var(--shadow-soft);
   position:fixed;
   bottom:22px;
   right:22px;
+  left:auto;
+  top:auto;
   width:54px;
   height:54px;
   border-radius:50%;
@@ -543,10 +545,11 @@ box-shadow:var(--shadow-soft);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:20px;
   box-shadow:0 0 25px rgba(212,175,55,.6);
   z-index:9999;
   opacity:0;
+  transform:none !important;
   pointer-events:none;
 }
 
