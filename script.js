@@ -113,3 +113,28 @@ setInterval(()=>{
   document.getElementById("cd-min").innerText = m;
   document.getElementById("cd-sec").innerText = s;
 },1000);
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+  const targetDate = new Date("2026-02-15T00:00:00").getTime();
+
+  const dayEl  = document.getElementById("cd-day");
+  const hourEl = document.getElementById("cd-hour");
+  const minEl  = document.getElementById("cd-min");
+  const secEl  = document.getElementById("cd-sec");
+
+  if(!dayEl) return;
+
+  setInterval(()=>{
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if(diff <= 0) return;
+
+    dayEl.innerText  = Math.floor(diff / (1000*60*60*24));
+    hourEl.innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    minEl.innerText  = Math.floor((diff % (1000*60*60)) / (1000*60));
+    secEl.innerText  = Math.floor((diff % (1000*60)) / 1000);
+  },1000);
+
+});
