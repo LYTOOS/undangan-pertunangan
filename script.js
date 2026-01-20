@@ -110,7 +110,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     tickSound.play().catch(()=>{});
 
 
-    if(diff <= 0) return;
+    if(diff <= 0){
+      document.querySelector(".countdown-wrap").style.display="none";
+      document.getElementById("eventStarted").style.display="block";
+      return;
+    }
 
     d.innerText = Math.floor(diff / (1000*60*60*24));
     h.innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
