@@ -9,62 +9,60 @@ const guestName = params.get("to")
 const guestEl = document.getElementById("guestName");
 if (guestEl) guestEl.innerText = guestName;
 
+
 // =============================
 // MUSIC CONTROL
 // =============================
 const music = document.getElementById("music");
 const musicBtn = document.getElementById("music-btn");
+const musicIcon = document.getElementById("music-icon");
 
 function toggleMusic(){
-  const icon = document.getElementById("music-icon");
+  if(!music) return;
 
   if(music.paused){
     music.play();
-    icon.innerHTML="❚❚";
-    musicBtn.classList.remove("paused");
+    if(musicIcon) musicIcon.innerHTML="❚❚";
   }else{
     music.pause();
-    icon.innerHTML="▶";
-    musicBtn.classList.add("paused");
+    if(musicIcon) musicIcon.innerHTML="▶";
   }
 }
 
+
 // =============================
-// OPEN INVITE
+// OPEN INVITE (FIXED)
 // =============================
 function openInvite(){
-  const cover = document.getElementById("cover");
-  const invite = document.querySelector(".invite");
-
-  cover.classList.add("hide");
-  setTimeout(()=>{
-    cover.style.display="none";
-    invite.classList.add("show");
-
-    AOS.refresh();
-  },1200);
 
   document.body.classList.remove("locked");
-  document.getElementById('cover').style.display = 'none';
 
-  document.querySelector('.invite').classList.add('show');
+  const cover  = document.getElementById("cover");
+  const invite = document.querySelector(".invite");
+
+  if(cover){
+    cover.style.display="none";
+  }
+
+  if(invite){
+    invite.classList.add("show");
+  }
 
   if(music){
-    music.volume=0.7;
+    music.volume = 0.7;
     music.play().catch(()=>{});
   }
 
-  const music = document.getElementById('music');
-  music.play();
-
   if(musicBtn){
-    musicBtn.classList.add("active");
+    musicBtn.style.opacity = "1";
+    musicBtn.style.pointerEvents = "auto";
   }
-  
-  const btn = document.getElementById('music-btn');
-  btn.style.opacity = '1';
-  btn.style.pointerEvents = 'auto';
+
+  if(typeof AOS !== "undefined"){
+    AOS.refresh();
+  }
 }
+
 
 // =============================
 // RSVP WHATSAPP
@@ -72,7 +70,7 @@ function openInvite(){
 const rsvpBtn = document.getElementById("rsvpBtn");
 if(rsvpBtn){
   rsvpBtn.onclick = ()=>{
-    const phone = "6282261467360"; // GANTI NOMOR
+    const phone = "6282261467360";
     const text = `
 Assalamu’alaikum Warahmatullahi Wabarakatuh
 
@@ -92,28 +90,10 @@ Terima kasih 🙏
   };
 }
 
+
 // =============================
-// COUNTDOWN 15 FEBRUARI 2026
+// COUNTDOWN (SATU KALI SAJA)
 // =============================
-const targetDate = new Date("2026-02-15T00:00:00").getTime();
-
-setInterval(()=>{
-  const now = new Date().getTime();
-  const diff = targetDate - now;
-
-  if(diff <= 0) return;
-
-  const d = Math.floor(diff / (1000*60*60*24));
-  const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  const m = Math.floor((diff % (1000*60*60)) / (1000*60));
-  const s = Math.floor((diff % (1000*60)) / 1000);
-
-  document.getElementById("cd-day").innerText = d;
-  document.getElementById("cd-hour").innerText = h;
-  document.getElementById("cd-min").innerText = m;
-  document.getElementById("cd-sec").innerText = s;
-},1000);
-
 document.addEventListener("DOMContentLoaded", ()=>{
 
   const targetDate = new Date("2026-02-15T00:00:00").getTime();
@@ -126,15 +106,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
   if(!dayEl) return;
 
   setInterval(()=>{
-    const now = new Date().getTime();
+    const now = Date.now();
     const diff = targetDate - now;
 
     if(diff <= 0) return;
 
     dayEl.innerText  = Math.floor(diff / (1000*60*60*24));
-    hourEl.innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-    minEl.innerText  = Math.floor((diff % (1000*60*60)) / (1000*60));
-    secEl.innerText  = Math.floor((diff % (1000*60)) / 1000);
+    hourEl.innerText = Math.floor((diff / (1000*60*60)) % 24);
+    minEl.innerText  = Math.floor((diff / (1000*60)) % 60);
+    secEl.innerText  = Math.floor((diff / 1000) % 60);
   },1000);
 
 });
