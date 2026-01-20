@@ -82,3 +82,25 @@ Terima kasih 🙏
     );
   };
 }
+
+// =============================
+// COUNTDOWN 15 FEBRUARI 2026
+// =============================
+const targetDate = new Date("2026-02-15T00:00:00").getTime();
+
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  if(diff <= 0) return;
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const s = Math.floor((diff % (1000*60)) / 1000);
+
+  document.getElementById("cd-day").innerText = d;
+  document.getElementById("cd-hour").innerText = h;
+  document.getElementById("cd-min").innerText = m;
+  document.getElementById("cd-sec").innerText = s;
+},1000);
