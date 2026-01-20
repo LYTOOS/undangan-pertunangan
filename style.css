@@ -33,8 +33,7 @@ body.locked {
   align-items:center;
   justify-content:center;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.85)),
-    url("foto/hero.jpg") center/cover no-repeat;
+    radial-gradient(circle at top,#1b1b24,#07070b);
 }
 
 .cover-box{
@@ -66,6 +65,16 @@ body.locked {
   color:#111;
   font-size:15px;
   font-weight:600;
+}
+
+#cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at center,
+    rgba(212,175,55,.15),
+    transparent 65%);
 }
 
 @keyframes coverIn{
@@ -206,8 +215,8 @@ margin:-20px 0;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:48px;
-  flex-wrap:nowrap; /* PENTING */
+  gap:22px;
+  flex-wrap:nowrap;
 }
 
 .person img{
@@ -466,19 +475,19 @@ box-shadow:var(--shadow-soft);
   margin:12px 0;
 }
 
-.ring-wrap img{
-  width:64px;
-  animation:ringFloat 4s ease-in-out infinite;
-}
-
 @media(max-width:600px){
   .couple-photo{
-    gap:18px;
+    flex-wrap:nowrap;
   }
 
   .person img{
     width:120px;
     height:160px;
+  }
+
+  .ring-wrap img{
+    width:48px;
+    animation:ringFloat 4s ease-in-out infinite;
   }
 }
 
