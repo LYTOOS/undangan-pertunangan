@@ -98,23 +98,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   const targetDate = new Date("2026-02-15T00:00:00").getTime();
 
-  const dayEl  = document.getElementById("cd-day");
-  const hourEl = document.getElementById("cd-hour");
-  const minEl  = document.getElementById("cd-min");
-  const secEl  = document.getElementById("cd-sec");
-
-  if(!dayEl) return;
-
   setInterval(()=>{
-    const now = Date.now();
+    const now = new Date().getTime();
     const diff = targetDate - now;
 
     if(diff <= 0) return;
 
-    dayEl.innerText  = Math.floor(diff / (1000*60*60*24));
-    hourEl.innerText = Math.floor((diff / (1000*60*60)) % 24);
-    minEl.innerText  = Math.floor((diff / (1000*60)) % 60);
-    secEl.innerText  = Math.floor((diff / 1000) % 60);
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const s = Math.floor((diff % (1000*60)) / 1000);
+
+    document.getElementById("cd-day").innerText = d;
+    document.getElementById("cd-hour").innerText = h;
+    document.getElementById("cd-min").innerText = m;
+    document.getElementById("cd-sec").innerText = s;
   },1000);
 
 });
