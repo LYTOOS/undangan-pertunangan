@@ -77,8 +77,8 @@
 
 <!-- COUNTDOWN -->
 <section class="section countdown" data-aos="fade-up">
-  <p class="muted">MENUJU HARI BAHAGIA</p>
-  <h2>Hitung Mundur Acara Tunangan</h2>
+  <h2 class="center">Menuju Hari Bahagia</h2>
+  <h2 class="center">Hitung Mundur Acara Tunangan</h2>
 
   <p id="eventStarted" style="display:none;font-family:Playfair Display,serif;
                               font-size:26px;letter-spacing:1px;color:#ffd87a;">
@@ -206,6 +206,20 @@ AOS.init({
   duration:1000,
   easing:'ease-out-cubic'
 });
+</script>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{ threshold:0.2 });
+
+reveals.forEach(el=>observer.observe(el));
 </script>
 
 <script src="script.js"></script>
