@@ -39,15 +39,17 @@ function toggleMusic(){
 // =============================
 const rsvpBtn = document.getElementById("rsvpBtn");
 if(rsvpBtn){
-  rsvpBtn.onclick = ()=>{
+  rsvpBtn.addEventListener("click", () => {
+    
     const phone = "6282261467360";
+    
     const text = `
 Assalamu’alaikum Warahmatullahi Wabarakatuh
 
 Saya *${guestName}* menyatakan
 bersedia menghadiri acara tunangan:
 
-Fitriani & Charly Handani
+*Fitriani & Charly Handani*
 🗓 Minggu, 15 Februari 2026
 
 Terima kasih 🙏
