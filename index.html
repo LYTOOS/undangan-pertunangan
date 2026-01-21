@@ -219,6 +219,42 @@
 </section>
 
 <script>
+const openBtn = document.getElementById('openBtn');
+const cover   = document.getElementById('cover');
+const invite  = document.querySelector('.invite');
+const music   = document.getElementById('music');
+const musicBtn= document.getElementById('music-btn');
+const icon    = document.getElementById('music-icon');
+
+openBtn.addEventListener('click',()=>{
+
+  document.body.classList.remove('locked');
+
+  cover.classList.add('hide');
+
+  invite.style.display='block';
+  setTimeout(()=>invite.classList.add('show'),300);
+
+  music.play();
+  musicBtn.classList.add('show','active');
+
+});
+
+/* TOGGLE MUSIC */
+musicBtn.addEventListener('click',()=>{
+  if(music.paused){
+    music.play();
+    icon.innerHTML='❚❚';
+    musicBtn.classList.remove('paused');
+  }else{
+    music.pause();
+    icon.innerHTML='▶';
+    musicBtn.classList.add('paused');
+  }
+});
+</script>
+
+<script>
 const reveals = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries=>{
