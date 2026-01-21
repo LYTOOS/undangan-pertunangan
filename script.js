@@ -29,41 +29,6 @@ function toggleMusic(){
   }
 }
 
-
-// =============================
-// OPEN INVITE (FIXED)
-// =============================
-function openInvite(){
-
-  document.body.classList.remove("locked");
-
-  const cover  = document.getElementById("cover");
-  const invite = document.querySelector(".invite");
-
-  cover.classList.add("hide");
-
-  setTimeout(()=>{
-    cover.style.display="none";
-    invite.style.display="block";
-    invite.classList.add("show");
-
-    // aktifkan semua animasi reveal
-    document.querySelectorAll('.reveal').forEach(el=>{
-      el.classList.add('show');
-    });
-
-  },800);
-
-  if(music){
-    music.volume = 0.7;
-    music.play().catch(()=>{});
-  }
-
-  if(musicBtn){
-    musicBtn.classList.add("show","active");
-  }
-}
-
   if(typeof AOS !== "undefined"){
     AOS.refresh();
   }
