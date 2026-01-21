@@ -13,17 +13,30 @@
 
 <!-- COVER -->
 <section id="cover">
-  <div class="cover-box">
+  <div class="cover-box reveal show">
+    
     <p class="muted">UNDANGAN TUNANGAN</p>
-    <h1 id="guestName">Tamu Undangan</h1>
-    <p class="muted">Dengan segala hormat, kami mengundang Anda</p>
-    <button onclick="openInvite()">Buka Undangan</button>
+    
+    <h1 id="guestName">
+      Tamu Undangan
+    </h1>
+    
+    <p class="muted">
+      Dengan segala hormat, kami mengundang Anda
+    </p>
+    
+    <button id="openBtn">
+      Buka Undangan
+    </button>
+    
   </div>
 </section>
 
 <audio id="music" src="audio/backsound.mp3" loop></audio>
 
-<div class="invite">
+<div id="music-btn">
+  <span id="music-icon">❚❚</span>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -32,21 +45,19 @@
 
   <div class="hero-text">
 
-    <small data-aos="fade-down" data-aos-delay="100">
-      Undangan Tunangan
-    </small>
+    <h1 class="reveal">Undangan Tunangan</h1>
 
-    <h1 data-aos="zoom-in" data-aos-delay="300">
-      Fitriani <br>&<br> Charly
+    <h1 class="reveal reveal-zoom reveal-delay-1">
+      Fitriani & Charly
     </h1>
 
-    <p class="arabic" data-aos="fade-up" data-aos-delay="500">
+    <p class="arabic reveal reveal-delay-2">
       بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
     </p>
 
-    <p data-aos="fade-up" data-aos-delay="700">
+    <small class="reveal reveal-delay-3">
       Minggu, 15 Februari 2026
-    </p>>
+    </small>
     
   </div>
 </section>
@@ -56,20 +67,20 @@
   <div class="card">
     <div class="couple-photo">
 
-      <div class="person" data-aos="fade-right">
+      <div class="person reveal reveal-left">
         <img src="foto/fitriani.jpg">
-        <h3 data-aos="fade-up" data-aos-delay="200">Fitriani</h3>
-        <span data-aos="fade-up" data-aos-delay="350">Putri</span>
+        <h3>Fitriani</h3>
+        <span>Putri</span>
       </div>
 
-      <div class="ring-wrap" data-aos="zoom-in" data-aos-delay="300">
+      <div class="ring-wrap reveal reveal-zoom reveal-delay-2">
         <img src="ornament/ring-cross-gold.svg">
       </div>
 
-      <div class="person" data-aos="fade-left">
+      <div class="person reveal reveal-right">
         <img src="foto/charly.jpg">
-        <h3 data-aos="fade-up" data-aos-delay="200">Charly</h3>
-        <span data-aos="fade-up" data-aos-delay="350">Putra</span>
+        <h3>Charly</h3>
+        <span>Putra</span>
       </div>
 
     </div>
@@ -77,15 +88,10 @@
 </section>
 
 <!-- COUNTDOWN -->
-<section class="section countdown" data-aos="fade-up">
-  <p class="muted center"
-     data-aos="fade-up">
-     Menuju Hari Bahagia
-  </p>
-  <h2 class="center"
-      data-aos="zoom-in"
-      data-aos-delay="200">
-      Hitung Mundur Acara Tunangan
+<section class="section countdown reveal-up">
+  <p class="muted center reveal">Menuju Hari Bahagia</p>
+  <h2 class="center reveal reveal-delay-1">
+    Hitung Mundur Acara Tunangan
   </h2>
 
   <p id="eventStarted" style="display:none;font-family:Playfair Display,serif;
@@ -99,19 +105,19 @@
 
   <div class="countdown-wrap">
 
-      <div class="cd" data-aos="fade-up" data-aos-delay="100">
+      <div class="cd reveal reveal-delay-1">
         <span id="d"></span><small>Hari</small>
       </div>
 
-      <div class="cd" data-aos="fade-up" data-aos-delay="250">
+      <div class="cd reveal reveal-delay-2">
         <span id="h"></span><small>Jam</small>
       </div>
 
-      <div class="cd" data-aos="fade-up" data-aos-delay="400">
+      <div class="cd reveal reveal-delay-3">
         <span id="m"></span><small>Menit</small>
       </div>
 
-      <div class="cd" data-aos="fade-up" data-aos-delay="550">
+      <div class="cd reveal reveal-delay-4">
         <span id="s"></span><small>Detik</small>
       </div>
 
@@ -121,7 +127,7 @@
 <!-- GALLERY -->
 <section class="section gallery-story">
   <p class="muted center">GALERI</p>
-  <h2 class="center" story-item reveal >
+  <h2 class="center reveal">
     Kenangan Kami
   </h2>
 
@@ -130,37 +136,35 @@
     <p class="story-text">Awal pertemuan yang sederhana</p>
   </div>
 
-  <div class="story-item reveal">
+  <div class="story-item reveal reveal-left">
     <img src="foto/gal2.jpg">
     <p class="story-text">Perjalanan yang penuh doa</p>
   </div>
 
-  <div class="story-item reveal">
+  <div class="story-item reveal reveal-right">
     <img src="foto/gal3.jpg">
     <p class="story-text">Langkah menuju masa depan</p>
   </div>
 
-  <div class="story-item reveal">
+  <div class="story-item reveal reveal-zoom">
     <img src="foto/gal4.jpg">
     <p class="story-text">Ikatan yang InsyaAllah abadi</p>
   </div>
 </section>
 
 <!-- DOA ISLAMI -->
-<section class="section doa" data-aos="fade-up">
+<section class="section doa reveal reveal-up">
   <div class="doa-frame">
 
-    <h2 data-aos="fade-up">
-      QS. Al-Furqan : 74
-    </h2>
+    <h2 class="reveal">QS. Al-Furqan : 74</h2>
 
-    <p class="arabic" data-aos="zoom-in" data-aos-delay="200">
+    <p class="arabic reveal reveal-zoom reveal-delay-1">
       رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا
       وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ
       وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
     </p>
 
-    <p class="arti" data-aos="fade-up" data-aos-delay="400">
+    <p class="arti reveal reveal-delay-2">
       “Ya Tuhan kami, anugerahkanlah kepada kami pasangan
       dan keturunan sebagai penyejuk hati,
       dan jadikanlah kami imam bagi orang-orang bertakwa.”
@@ -170,9 +174,9 @@
 </section>
 
 <!-- INFO -->
-<section class="section" data-aos="fade-up">
+<section class="section">
   <div class="card text-center">
-    <p data-aos="fade-up">
+    <p class="reveal reveal-delay-1">
       Dengan memohon rahmat dan ridho Allah SWT,
       kami bermaksud menyelenggarakan acara tunangan
       dan mengharap kehadiran serta doa restu.
@@ -184,24 +188,23 @@
 <section class="section">
   <div class="card detail">
     <div>
-      <span data-aos="fade-up">
+      <span class="reveal">
         Hari / Tanggal
       </span>
-      <b data-aos="fade-up">
+      <b class="reveal reveal-delay-1">
         Minggu, 15 Februari 2026
       </b>
     </div>
     <div>
-      <span data-aos="fade-up">
+      <span class="reveal">
         Tempat
       </span>
-      <b data-aos="fade-up">
+      <b class="reveal reveal-delay-1">
         Kediaman Mempelai Wanita
       </b>
     </div>
-    <a id="rsvpBtn"
-     data-aos="zoom-in">
-     Konfirmasi Kehadiran
+    <a id="rsvpBtn" class="reveal reveal-zoom reveal-delay-2">
+      Konfirmasi Kehadiran
     </a>
   </div>
 </section>
@@ -209,31 +212,24 @@
 <!-- MAP -->
 <section class="section">
   <div class="card map">
-    <iframe 
-      data-aos="fade-up"
-      data-aos-delay="300"
+    <iframe class="reveal reveal-delay-1"
       src="https://www.google.com/maps?q=-0.239052,103.635860&output=embed">
     </iframe>
   </div>
 </section>
 
-<div id="music-btn" onclick="toggleMusic()">
-  <span id="music-icon">❚❚</span>
-</div>
-
 <script>
-const revealItems = document.querySelectorAll('.reveal');
+const reveals = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver(entries=>{
+const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
-      revealObserver.unobserve(entry.target);
     }
   });
-},{threshold:.18});
+},{ threshold:0.2 });
 
-revealItems.forEach(el=>revealObserver.observe(el));
+reveals.forEach(el=>observer.observe(el));
 </script>
 
 <script src="script.js"></script>
