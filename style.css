@@ -754,6 +754,8 @@ box-shadow:var(--shadow-soft);
   width:100%;
   border-radius:18px;
   box-shadow:0 30px 60px rgba(0,0,0,.35);
+  will-change:transform;
+  transition:transform .6s ease;
 }
 
 /* TEXT */
@@ -763,6 +765,10 @@ box-shadow:var(--shadow-soft);
   font-size:18px;
   color:#d4af37;
   line-height:1.6;
+
+  opacity:0;
+  transform:translateY(20px);
+  transition:.8s ease .25s;
 }
 
 /* ===== ANIMATION CORE ===== */
@@ -775,6 +781,11 @@ box-shadow:var(--shadow-soft);
 }
 
 .reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+.reveal.show .story-text{
   opacity:1;
   transform:none;
 }
