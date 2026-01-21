@@ -232,6 +232,30 @@ AOS.init({
 });
 </script>
 
+<script>
+const reveals = document.querySelectorAll('.reveal');
+  
+const observer = new IntersectionObserver(entries=>{ 
+ entries.forEach(entry=>{ 
+  if(entry.isIntersecting){ 
+    entry.target.classList.add('show'); 
+  } 
+ }); 
+},{ threshold:0.2 }); 
+  
+reveals.forEach(el=>observer.observe(el)); 
+</script> 
+  
+<script> 
+window.addEventListener('scroll',()=>{ 
+ document.querySelectorAll('.story-item img').forEach(img=>{ 
+  const rect = img.getBoundingClientRect(); 
+  const offset = rect.top / window.innerHeight; 
+  img.style.transform = translateY(${offset * 30}px); 
+ }); 
+}); 
+</script>
+
 <script src="script.js"></script>
 
 </body>
