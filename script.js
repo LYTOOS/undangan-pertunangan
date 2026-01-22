@@ -35,38 +35,54 @@ function toggleMusic(){
 }
 
 // =============================
-// RSVP WHATSAPP – PREMIUM
+// RSVP ADVANCE SYSTEM
 // =============================
-const rsvpBtn = document.getElementById("rsvpBtn");
+const modal = document.getElementById("rsvpModal");
+const rsvpGuest = document.getElementById("rsvpGuest");
 
 if(rsvpBtn){
-  rsvpBtn.addEventListener("click", ()=>{
+  rsvpBtn.onclick = ()=>{
+    rsvpGuest.innerText = guestName;
+    modal.classList.add("show");
+  };
+}
 
-    const phone = "6282261467360"; // ganti nomor WA
+function closeRSVP(){
+  modal.classList.remove("show");
+}
 
-    const message = `
+document.getElementById("sendRSVP").onclick = ()=>{
+
+  const status = document.querySelector('input[name="status"]:checked').value;
+  const count  = document.getElementById("guestCount").value;
+  const wish   = document.getElementById("wish").value || "-";
+
+  const phone = "6282261467360";
+
+  const text = `
 Assalamu’alaikum Warahmatullahi Wabarakatuh
 
-Dengan hormat,
+Saya *${guestName}*
+Status Kehadiran: *${status}*
+Jumlah Tamu: *${count} orang*
 
-Saya *${guestName}* mengonfirmasi
-insyaAllah *berkenan hadir* pada acara
-*Tunangan Fitriani & Charly Handani*
+Ucapan:
+"${wish}"
 
-🗓 Minggu, 15 Februari 2026
-
-Semoga acara berjalan lancar dan diberkahi Allah SWT.
+Tunangan:
+Fitriani & Charly Handani
+Minggu, 15 Februari 2026
 
 Terima kasih 🙏
-Wassalamu’alaikum Warahmatullahi Wabarakatuh
-    `.trim();
+`.trim();
 
-    window.open(
-      `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
-  });
-}
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+
+  closeRSVP();
+};
 
 // =============================
 // COUNTDOWN 15 FEBRUARI 2026
