@@ -64,6 +64,12 @@ body.locked{
   z-index:5;
 }
 
+@media(max-width:600px){
+  .cover-box{
+    padding:54px 30px;
+  }
+}
+
 /* GOLD FRAME */
 .cover-box::before{
   content:"";
