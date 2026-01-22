@@ -85,3 +85,23 @@ setInterval(()=>{
     Math.floor((gap / 1000) % 60);
 },1000);
 });
+
+function openInvite(){
+
+  document.body.classList.remove("locked");
+
+  document.getElementById("cover").style.display = "none";
+  document.querySelector(".invite").classList.add("show");
+
+  const music = document.getElementById("music");
+  const musicBtn = document.getElementById("music-btn");
+
+  if(music){
+    music.volume = 0.7;
+    music.play().catch(()=>{});
+  }
+
+  if(musicBtn){
+    musicBtn.classList.add("show","active");
+  }
+}
