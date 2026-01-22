@@ -283,6 +283,39 @@ const observer = new IntersectionObserver(entries=>{
 reveals.forEach(el=>observer.observe(el));
 </script>
 
+<!-- RSVP MODAL -->
+<div id="rsvpModal" class="rsvp-modal">
+  <div class="rsvp-box reveal reveal-zoom">
+
+    <h3>Konfirmasi Kehadiran</h3>
+    <p class="rsvp-name" id="rsvpGuest"></p>
+
+    <div class="rsvp-option">
+      <label>
+        <input type="radio" name="status" value="Hadir" checked>
+        Hadir
+      </label>
+      <label>
+        <input type="radio" name="status" value="Tidak Hadir">
+        Tidak Hadir
+      </label>
+    </div>
+
+    <select id="guestCount">
+      <option value="1">1 Orang</option>
+      <option value="2">2 Orang</option>
+      <option value="3">3 Orang</option>
+      <option value="4">4 Orang</option>
+    </select>
+
+    <textarea id="wish" placeholder="Ucapan / Doa (opsional)"></textarea>
+
+    <button id="sendRSVP">Kirim via WhatsApp</button>
+    <span class="close" onclick="closeRSVP()">×</span>
+
+  </div>
+</div>
+
 <script src="script.js"></script>
 
 </body>
