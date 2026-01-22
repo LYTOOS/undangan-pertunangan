@@ -853,6 +853,8 @@ textarea{
 }
 
 #rsvpBtn{
+  border:none;
+  width:100%;
   position: relative;
   z-index: 50;
   pointer-events: auto;
@@ -875,4 +877,51 @@ textarea{
   font-size:26px;
   cursor:pointer;
   opacity:.7;
+}
+
+/* =========================
+   GLOBAL LAYER HIERARCHY
+========================= */
+
+/* Background cinematic */
+body::before,
+body::after{
+  pointer-events:none;
+  z-index:1;
+}
+
+/* MAIN CONTENT */
+.invite{
+  position:relative;
+  z-index:10;
+}
+
+/* SECTION & CARD */
+.section,
+.card{
+  position:relative;
+  z-index:20;
+}
+
+/* BUTTON & INTERACTIVE */
+button,
+a,
+#rsvpBtn{
+  position:relative;
+  z-index:30;
+  pointer-events:auto;
+}
+
+/* FLOATING MUSIC */
+#music-btn{
+  z-index:99999 !important;
+  pointer-events:auto !important;
+}
+
+/* COVER (ONLY BEFORE OPEN) */
+#cover{
+  z-index:100000;
+}
+#cover.hide{
+  pointer-events:none;
 }
