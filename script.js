@@ -50,43 +50,55 @@ const observer = new IntersectionObserver(entries=>{
 reveals.forEach(el=>observer.observe(el));
 
 // =============================
-// RSVP ADVANCE SYSTEM
+// RSVP MODAL LOGIC
 // =============================
-const modal = document.getElementById("rsvpModal");
-const rsvpGuest = document.getElementById("rsvpGuest");
+const rsvpModal   = document.getElementById("rsvpModal");
+const rsvpBtn     = document.getElementById("rsvpBtn");
+const rsvpNameEl  = document.getElementById("rsvpName");
+const rsvpMessage = document.getElementById("rsvpMessage");
+const sendRSVP    = document.getElementById("sendRSVP");
 
+let rsvpStatus = "Hadir";
+
+// OPEN MODAL
 if(rsvpBtn){
   rsvpBtn.onclick = ()=>{
-    rsvpGuest.innerText = guestName;
-    modal.classList.add("show");
+    rsvpModal.classList.add("show");
+    rsvpNameEl.innerHTML = `Kepada Yth.<br><b>${guestName}</b>`;
   };
 }
 
+// CLOSE
 function closeRSVP(){
-  modal.classList.remove("show");
+  rsvpModal.classList.remove("show");
 }
 
-document.getElementById("sendRSVP").onclick = ()=>{
+// SELECT STATUS
+document.querySelectorAll(".rsvp-choice button").forEach(btn=>{
+  btn.onclick = ()=>{
+    document.querySelectorAll(".rsvp-choice button")
+      .forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    rsvpStatus = btn.dataset.status;
+  };
+});
 
-  const status = document.querySelector('input[name="status"]:checked').value;
-  const count  = document.getElementById("guestCount").value;
-  const wish   = document.getElementById("wish").value || "-";
-
+// SEND TO WHATSAPP
+sendRSVP.onclick = ()=>{
   const phone = "6282261467360";
+  const msg = rsvpMessage.value.trim();
 
   const text = `
 Assalamu’alaikum Warahmatullahi Wabarakatuh
 
 Saya *${guestName}*
-Status Kehadiran: *${status}*
-Jumlah Tamu: *${count} orang*
+menyatakan *${rsvpStatus}* menghadiri
+acara tunangan:
 
-Ucapan:
-"${wish}"
-
-Tunangan:
 Fitriani & Charly Handani
-Minggu, 15 Februari 2026
+🗓 Minggu, 15 Februari 2026
+
+${msg ? "Pesan:\n"+msg : ""}
 
 Terima kasih 🙏
 `.trim();
@@ -95,8 +107,6 @@ Terima kasih 🙏
     `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
     "_blank"
   );
-
-  closeRSVP();
 };
 
 // =============================
